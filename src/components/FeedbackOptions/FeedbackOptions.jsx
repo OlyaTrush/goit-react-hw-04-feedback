@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 
 
- const FeedbackOptions = ({ options, clickFeedback}) => (
+ const FeedbackOptions = ({ options, clickFeedback}) => {
+  return (
     <>
        {options.map(item => (
         <li key={item}>
@@ -11,7 +12,7 @@ import PropTypes from 'prop-types';
         </li>
       ))}
     </>
-)
+)}
 export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {

@@ -24,7 +24,6 @@ export default class App extends Component {
       <div>
         <Section
           title={'Please leave feedback'}
-          countTotalFeedback={total}
         >
           <FeedbackOptions
             clickFeedback = {this.saveFeedback}
@@ -32,13 +31,13 @@ export default class App extends Component {
           />
           <section>
             <h2>Statistics</h2>
-            {{total} !== 0 ? (
+            {total ? (
               <>
                 <Statistics
                   good={this.state.good}
                   neutral={this.state.neutral}
                   bad={this.state.bad}
-                  countTotalFeedback={total}
+                  total={total}
                   countPositiveFeedbackPercentage={positivePercentage}
                 />
               </>
