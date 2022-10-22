@@ -12,7 +12,7 @@ export const Ul = styled.ul`
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: rgba(130, 200, 210, 0.3);
+  background-color: #99a5cc96;
 `;
 
 export const Div = styled.div`
@@ -25,6 +25,7 @@ export const H2 = styled.h2`
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 3px;
+  color: #580505
 `;
 
 export const Button = styled.button`
@@ -35,8 +36,8 @@ export const Button = styled.button`
   font-weight: 700;
   width: 150px;
   height: 40px;
-  background-color: rgba(200, 200, 250, 0.6);
-  color: teal;
+  background-color: #8e8ebb99;
+  color: #394545;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -57,7 +58,8 @@ export const Li = styled.li`
 `;
 
 export const Span = styled.span`
-  color: grey;
+  color: #000c12;
   margin-top: 20px;
   font-size: 20px;
+
 `;
