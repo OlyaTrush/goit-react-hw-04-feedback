@@ -1,21 +1,18 @@
+import React from 'react';
+import { Button } from '../FeedbackWidget.styled';
 import PropTypes from 'prop-types';
 
-
- const FeedbackOptions = ({ options, clickFeedback}) => {
-  return (
-    <>
-       {options.map(item => (
-        <li key={item}>
-          <button onClick={() => clickFeedback(item)}>
-            {item[0].toUpperCase() + item.slice(1)}
-          </button>
-        </li>
-      ))}
-    </>
-)}
-export default FeedbackOptions;
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  return options.map(option => (
+    <Button key={option} type="button" onClick={() => onLeaveFeedback(option)}>
+      {option}
+    </Button>
+  ));
+};
 
 FeedbackOptions.propTypes = {
-    clickFeedback: PropTypes.func.isRequired,
-    options: PropTypes.arrayOf(PropTypes.string).isRequired,
-  };
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};
+
+export default FeedbackOptions;

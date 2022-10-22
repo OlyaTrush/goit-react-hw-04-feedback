@@ -1,24 +1,36 @@
+import React from 'react';
+import { Ul, Li, Span } from '../FeedbackWidget.styled';
 import PropTypes from 'prop-types';
 
-const Statistics = ({ good, neutral, bad, countTotalFeedback, countPositiveFeedbackPercentage }) => (
-
-    <div>
-        <ul>
-            <li>Good: {good}</li>
-            <li>Neutral:{neutral}</li>
-            <li>Bad: {bad}</li>
-            <li>Total: {countTotalFeedback}</li>
-            <li>Positive Feedback: {countTotalFeedback ? countPositiveFeedbackPercentage : 0}%</li>
-        </ul>
-    </div>
-)
-
-Statistics.propTypes = {
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-    countTotalFeedback: PropTypes.number.isRequired,
-    countPositiveFeedbackPercentage: PropTypes.number.isRequired,
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+  return (
+    <Ul>
+      <Li>
+        Good <Span>{good}</Span>
+      </Li>
+      <Li>
+        Neutral <Span>{neutral}</Span>
+      </Li>
+      <Li>
+        Bad <Span>{bad}</Span>
+      </Li>
+      <Li>
+        Total <Span>{total > 0 ? total : 0}</Span>
+      </Li>
+      <Li>
+        Positive feedback
+        <Span>{positivePercentage > 0 ? positivePercentage : 0}%</Span>
+      </Li>
+    </Ul>
+  );
 };
 
-export default Statistics
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
+
+export default Statistics;
